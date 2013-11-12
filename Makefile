@@ -32,7 +32,7 @@ $(TARGET): $(OBJS)
 
 %.o: %.cpp
 	@echo "Compiling $(<F) $(@F) ..."
-	@echo.
+	@echo .
 	@$(CC) $(CXXFLAGS) $(INCLUDES) -o $@ -c $<
 
 
