@@ -1,0 +1,50 @@
+# --------------------------------------------------------------------------------------
+# PS ISO Tool MSYS/MINGW Makefile (uses MS Visual C++ Tools to compile) (CaptainCPS-X, 2013)
+# --------------------------------------------------------------------------------------
+TARGET		:= 	bin/psiso_tool.exe
+
+CXX			:= 	cl
+LD			:=	link
+
+ifdef OPT_UNICODE
+CXXFLAGS	:= 	/D "_UNICODE" /D "UNICODE" /nologo /w /O2 /Ox /Oi /Ot /Oy /Ob2 /GF /Gs /Gy /GL /Gr /Zc:forScope /MT /EHsc
+else
+CXXFLAGS 	:= 	/nologo /w /O2 /Ox /Oi /Ot /Oy /Ob2 /GF /Gs /Gy /GL /Gr /Zc:forScope /MT /EHsc
+endif
+
+ifdef OPT_X64
+LDFLAGS 	:= /LTCG:STATUS /NOLOGO /MACHINE:X64 /OUT:$(TARGET)
+else
+LDFLAGS 	:= /LTCG:STATUS /NOLOGO /MACHINE:X86 /OUT:$(TARGET)
+endif
+
+LIBS		:=	Kernel32.lib Shell32.lib User32.lib
+INCLUDES	:= 	/I source
+
+SRCS		:= 	source/psiso_tool.cpp \
+				source/psiso_tool_main.cpp
+
+OBJS		:=	$(SRCS:.cpp=.obj)
+
+vpath %.cpp source
+vpath %.obj source
+
+.DEFAULT_GOAL := all
+.PHONY: cleanup
+
+cleanup:
+	@rm -fr $(OBJS)
+	@rm -fr $(TARGET)
+
+all: $(TARGET)
+
+$(TARGET): $(OBJS)
+	@echo "Linking object files ..."
+	@echo.
+	@$(LD) $(LDFLAGS) $(OBJS) $(LIBS)
+
+%.obj: %.cpp
+	@echo "Compiling $(<F) $(@F) ..."
+	@echo.
+	@$(CXX) $(CXXFLAGS) /c /Fo$(@) $(INCLUDES) $(<)
+	

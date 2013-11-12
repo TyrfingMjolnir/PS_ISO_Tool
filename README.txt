@@ -1,12 +1,8 @@
-#### PS ISO Tool (Supports PS1/PS2/PS3/PSP disc images) (CaptainCPS-X, 2013)
+================================================================================
+ PS ISO Tool (Supports PS1/PS2/PS3/PSP disc images) (CaptainCPS-X, 2013)
+================================================================================
 
-Latest release: v1.03
-
----
-
-![Image Alt](http://img706.imageshack.us/img706/7572/ncr9.png)
-
----
+https://github.com/CaptainCPS/PS_ISO_Tool
 
  This tool will parse any of the supported PlayStation ISO / BIN. The module will 
  also check for valid (ISO9660 / MODE1 / 2048) or (MODE2 / 2352).
@@ -35,19 +31,19 @@ Latest release: v1.03
  patch a non PS3 ISO, you will corrupt the ISO with data that shouldn't be there, so
  avoid doing that xD.
  
----
+================================================================================
 
  Usage:
 	
 	ps_isotool [opt] [in]
 
----
+--------------------------------------------------------------------------------
 
  Example 1 - Patching a PS3 game ISO:
 
 	ps_isotool --ps3 --verbose --patch "C:\PS3ISO\MyPS3ISO.iso"
 
----	
+--------------------------------------------------------------------------------	
 
  Example 2 - Displaying info from ISOs:
 
@@ -58,7 +54,7 @@ Latest release: v1.03
 	
 Note: If you don't specify "--verbose" then only the Title ID and Title will be displayed.
 
----
+--------------------------------------------------------------------------------
 
  Example 3 - Creating a PS3 ISO in compliance with the PS3 system standard disc format:
 
@@ -75,9 +71,9 @@ Important: There is no HDD space verification implemented yet so, if you plan to
 make a batch for a big list of games, make sure you check your destination HDD 
 available free space, at least until it gets implemented.
 
----
+================================================================================
 
-#### Changelog:
+Changelog:
 
 v1.03 (November 11, 2013)
 
@@ -103,12 +99,3 @@ v1.00 (November 9, 2013)
 
 - Initial Release.
 
----
-
-### Latest Release Downloads (Binary + Source):
-
-- [Dropbox] https://db.tt/kb7kMTuC
-- [ZippyShare] http://www6.zippyshare.com/v/73573812/file.html
-- [RGhost] http://rghost.net/50108843
-
-Thanks to "aldostools" for making the GUI frontend ( http://ps3tools.aldostools.org/psiso_tool_GUI.rar ) 

@@ -1,0 +1,8 @@
+@echo off
+
+set SOURCE_DIR="G:\GAMEZ\[BLES01750]-METAL GEAR RISING REVENGEANCE"
+set DESTINATION_DIR="G:\PS3ISO"
+
+call psiso_tool --mkps3iso %SOURCE_DIR% %DESTINATION_DIR% 
+
+pause
