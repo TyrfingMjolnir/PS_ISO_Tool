@@ -145,7 +145,12 @@ Just add these flags to your makefile...
 #define _write		write
 #define _read		read
 #define _seek		seek
+
 #define _lseek64	lseek //64 for DARWIN lseek is 64 bit already
+/*
+The reason you can just use lseek is because off_t is a 64bit wide value.
+*/
+
 #define _fstat		fstat
 #define _stat		stat
 #define _link		link
