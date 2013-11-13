@@ -1,4 +1,9 @@
 /*
+
+Error compiling under DARWIN aka MacOSX
+
+http://stackoverflow.com/questions/19649634/clang-error-unsupported-option-static-libgcc-on-mac-osx-mavericks
+
 ================================================================================
  PS ISO Tool (Supports PS1/PS2/PS3/PSP disc images) (CaptainCPS-X, 2013)
 ================================================================================
@@ -148,9 +153,8 @@ Just add these flags to your makefile...
 
 #define _lseek64	lseek //64 for DARWIN lseek is 64 bit already
 /*
-The reason you can just use lseek is because off_t is a 64bit wide value.
 
-http://stackoverflow.com/questions/19649634/clang-error-unsupported-option-static-libgcc-on-mac-osx-mavericks
+The reason you can just use lseek is because off_t is a 64bit wide value.
 
 */
 
