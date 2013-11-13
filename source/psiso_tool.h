@@ -149,6 +149,9 @@ Just add these flags to your makefile...
 #define _lseek64	lseek //64 for DARWIN lseek is 64 bit already
 /*
 The reason you can just use lseek is because off_t is a 64bit wide value.
+
+http://stackoverflow.com/questions/19649634/clang-error-unsupported-option-static-libgcc-on-mac-osx-mavericks
+
 */
 
 #define _fstat		fstat
